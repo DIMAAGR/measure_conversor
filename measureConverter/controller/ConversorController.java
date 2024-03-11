@@ -1,5 +1,6 @@
 package measureConverter.controller;
 
+import measureConverter.enums.ViewOption;
 import measureConverter.model.LengthConversorModel;
 import measureConverter.model.TemperatureConversorModel;
 import measureConverter.model.WeightConversorModel;
@@ -71,8 +72,13 @@ public class ConversorController {
     int selectedPage = 0;
 
     public void showMainPage() {
-        view.displayConversionOptions();
 
+        ViewOption option;
+
+        do {
+            view.displayConversionOptions();
+            option = view.getSelectedConversionOption();
+        } while (option != ViewOption.EXIT);
     }
 
     public void clearView() {
