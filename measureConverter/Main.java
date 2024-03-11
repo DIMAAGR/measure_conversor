@@ -2,11 +2,9 @@ package measureConverter;
 
 import measureConverter.controller.ConversorController;
 import measureConverter.controller.ConversorController.ConversorControllerBuilder;
-import measureConverter.model.CelciusConversorModel;
-import measureConverter.model.FahrenheitConversorModel;
-import measureConverter.model.InchConversorModel;
-import measureConverter.model.KelvinConversorModel;
-import measureConverter.model.MetersConversorModel;
+import measureConverter.model.LengthConversorModel;
+import measureConverter.model.TemperatureConversorModel;
+import measureConverter.model.WeightConversorModel;
 import measureConverter.view.ConversorView;
 
 // =================================================================================================
@@ -25,11 +23,9 @@ public class Main {
     public static void main(String[] args) {
 
         // Cada Model tem por responsabilidade fazer os calculos de conversão
-        CelciusConversorModel celciusModel = new CelciusConversorModel();
-        FahrenheitConversorModel fahrenheitModel = new FahrenheitConversorModel();
-        InchConversorModel inchModel = new InchConversorModel();
-        KelvinConversorModel kelvinModel = new KelvinConversorModel();
-        MetersConversorModel metersModel = new MetersConversorModel();
+        LengthConversorModel lengthModel = new LengthConversorModel();
+        TemperatureConversorModel temperatureModel = new TemperatureConversorModel();
+        WeightConversorModel weightModel = new WeightConversorModel();
 
         // View Mostra as telas com opções para o usuário selecionar para converter
         // e também os resultados de cada conversão
@@ -39,11 +35,10 @@ public class Main {
         // respostas.
 
         ConversorControllerBuilder builder = new ConversorControllerBuilder();
-        builder.celciusModel(celciusModel);
-        builder.fahrenheitModel(fahrenheitModel);
-        builder.inchModel(inchModel);
-        builder.kelvinModel(kelvinModel);
-        builder.metersModel(metersModel);
+        builder.lengthModel(lengthModel);
+        builder.temperatureModel(temperatureModel);
+        builder.weightModel(weightModel);
+
         builder.view(view);
 
         ConversorController controller = builder.build();
