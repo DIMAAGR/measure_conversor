@@ -1,12 +1,12 @@
-package estruturasRepetitivas;
+package measureConverter;
 
-import estruturasRepetitivas.controller.ConversorController;
-import estruturasRepetitivas.model.CelciusConversorModel;
-import estruturasRepetitivas.model.FahrenheitConversorModel;
-import estruturasRepetitivas.model.InchConversorModel;
-import estruturasRepetitivas.model.KelvinConversorModel;
-import estruturasRepetitivas.model.MetersConversorModel;
-import estruturasRepetitivas.view.ConversorView;
+import measureConverter.controller.ConversorController;
+import measureConverter.model.CelciusConversorModel;
+import measureConverter.model.FahrenheitConversorModel;
+import measureConverter.model.InchConversorModel;
+import measureConverter.model.KelvinConversorModel;
+import measureConverter.model.MetersConversorModel;
+import measureConverter.view.ConversorView;
 
 // =================================================================================================
 
