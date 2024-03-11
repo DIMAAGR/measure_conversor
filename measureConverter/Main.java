@@ -1,6 +1,7 @@
 package measureConverter;
 
 import measureConverter.controller.ConversorController;
+import measureConverter.controller.ConversorController.ConversorControllerBuilder;
 import measureConverter.model.CelciusConversorModel;
 import measureConverter.model.FahrenheitConversorModel;
 import measureConverter.model.InchConversorModel;
@@ -35,9 +36,17 @@ public class Main {
         ConversorView view = new ConversorView();
 
         // Controller faz a ponte entre os models e a view, controla os dados e
-        // respostas
-        ConversorController controller = new ConversorController(celciusModel, fahrenheitModel, inchModel, kelvinModel,
-                metersModel, view);
+        // respostas.
+
+        ConversorControllerBuilder builder = new ConversorControllerBuilder();
+        builder.celciusModel(celciusModel);
+        builder.fahrenheitModel(fahrenheitModel);
+        builder.inchModel(inchModel);
+        builder.kelvinModel(kelvinModel);
+        builder.metersModel(metersModel);
+        builder.view(view);
+
+        ConversorController controller = builder.build();
 
         controller.showMainPage();
     }
