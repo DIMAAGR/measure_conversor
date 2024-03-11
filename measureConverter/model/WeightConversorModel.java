@@ -1,5 +1,5 @@
 package measureConverter.model;
 
-public class InchConversorModel {
+public class WeightConversorModel {
 
 }

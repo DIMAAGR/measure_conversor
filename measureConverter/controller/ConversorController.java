@@ -1,10 +1,8 @@
 package measureConverter.controller;
 
-import measureConverter.model.CelciusConversorModel;
-import measureConverter.model.FahrenheitConversorModel;
-import measureConverter.model.InchConversorModel;
-import measureConverter.model.KelvinConversorModel;
-import measureConverter.model.MetersConversorModel;
+import measureConverter.model.LengthConversorModel;
+import measureConverter.model.TemperatureConversorModel;
+import measureConverter.model.WeightConversorModel;
 import measureConverter.view.ConversorView;
 
 public class ConversorController {
@@ -24,36 +22,24 @@ public class ConversorController {
      */
     public static class ConversorControllerBuilder {
 
-        private CelciusConversorModel celciusModel;
-        private FahrenheitConversorModel fahrenheitModel;
-        private InchConversorModel inchModel;
-        private KelvinConversorModel kelvinModel;
-        private MetersConversorModel metersModel;
+        private LengthConversorModel lengthModel;
+        private TemperatureConversorModel temperatureModel;
+        private WeightConversorModel weightModel;
 
         private ConversorView view;
 
-        public ConversorControllerBuilder celciusModel(CelciusConversorModel celciusModel) {
-            this.celciusModel = celciusModel;
+        public ConversorControllerBuilder lengthModel(LengthConversorModel lengthModel) {
+            this.lengthModel = lengthModel;
             return this;
         }
 
-        public ConversorControllerBuilder fahrenheitModel(FahrenheitConversorModel fahrenheitModel) {
-            this.fahrenheitModel = fahrenheitModel;
+        public ConversorControllerBuilder temperatureModel(TemperatureConversorModel temperatureModel) {
+            this.temperatureModel = temperatureModel;
             return this;
         }
 
-        public ConversorControllerBuilder inchModel(InchConversorModel inchModel) {
-            this.inchModel = inchModel;
-            return this;
-        }
-
-        public ConversorControllerBuilder kelvinModel(KelvinConversorModel kelvinModel) {
-            this.kelvinModel = kelvinModel;
-            return this;
-        }
-
-        public ConversorControllerBuilder metersModel(MetersConversorModel metersModel) {
-            this.metersModel = metersModel;
+        public ConversorControllerBuilder weightModel(WeightConversorModel weightModel) {
+            this.weightModel = weightModel;
             return this;
         }
 
@@ -70,19 +56,15 @@ public class ConversorController {
 
     public ConversorController(ConversorControllerBuilder builder) {
 
-        this.celciusModel = builder.celciusModel;
-        this.fahrenheitModel = builder.fahrenheitModel;
-        this.inchModel = builder.inchModel;
-        this.kelvinModel = builder.kelvinModel;
-        this.metersModel = builder.metersModel;
+        this.lengthModel = builder.lengthModel;
+        this.temperatureModel = builder.temperatureModel;
+        this.weightModel = builder.weightModel;
         this.view = builder.view;
     }
 
-    private CelciusConversorModel celciusModel;
-    private FahrenheitConversorModel fahrenheitModel;
-    private InchConversorModel inchModel;
-    private KelvinConversorModel kelvinModel;
-    private MetersConversorModel metersModel;
+    private LengthConversorModel lengthModel;
+    private TemperatureConversorModel temperatureModel;
+    private WeightConversorModel weightModel;
 
     private ConversorView view;
 
@@ -90,6 +72,7 @@ public class ConversorController {
 
     public void showMainPage() {
         view.displayConversionOptions();
+
     }
 
     public void clearView() {

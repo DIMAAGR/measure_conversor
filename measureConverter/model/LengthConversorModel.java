@@ -1,5 +1,5 @@
 package measureConverter.model;
 
-public class KelvinConversorModel {
+public class LengthConversorModel {
 
 }
