@@ -2,6 +2,8 @@ package measureConverter.view;
 
 import java.util.Scanner;
 
+import measureConverter.data.MeasureData;
+import measureConverter.data.MeasureData.MeasureDataBuilder;
 import measureConverter.enums.MeasureType;
 import measureConverter.enums.ViewOption;
 
@@ -47,6 +49,18 @@ public class ConversorView {
         System.out.println("========================================================================");
         System.out.println("O Resultado da conversão de " + from.name() + " para " + to.name() + " é: " + result);
         System.out.println("========================================================================");
+    }
+
+    public MeasureData getConversionLengthData() {
+        return new MeasureData(new MeasureDataBuilder());
+    }
+
+    public MeasureData getConversionWeightData() {
+        return new MeasureData(new MeasureDataBuilder());
+    }
+
+    public MeasureData getConversionTemperatureData() {
+        return new MeasureData(new MeasureDataBuilder());
     }
 
     public void clearView() {

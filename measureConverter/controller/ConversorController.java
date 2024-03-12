@@ -1,5 +1,6 @@
 package measureConverter.controller;
 
+import measureConverter.data.MeasureData;
 import measureConverter.enums.ViewOption;
 import measureConverter.model.LengthConversorModel;
 import measureConverter.model.TemperatureConversorModel;
@@ -78,7 +79,44 @@ public class ConversorController {
         do {
             view.displayConversionOptions();
             option = view.getSelectedConversionOption();
+
+            MeasureData data;
+            double result;
+
+            switch (option) {
+                case LENGHT:
+                    data = view.getConversionLengthData();
+                    result = doConvertLenght(data);
+                    view.showConvertedValue(data.getFrom(), data.getTo(), result);
+                    break;
+                case TEMPERATURE:
+                    data = view.getConversionTemperatureData();
+                    result = doConvertTemperature(data);
+                    view.showConvertedValue(data.getFrom(), data.getTo(), result);
+                    break;
+                case WEIGHT:
+                    data = view.getConversionWeightData();
+                    result = doConvertWeight(data);
+                    view.showConvertedValue(data.getFrom(), data.getTo(), result);
+                    break;
+                default:
+                    System.out.println("ERROR: Opção Inválida!");
+                    break;
+            }
+
         } while (option != ViewOption.EXIT);
+    }
+
+    private double doConvertLenght(MeasureData data) {
+        return 0;
+    }
+
+    private double doConvertWeight(MeasureData data) {
+        return 0;
+    }
+
+    private double doConvertTemperature(MeasureData data) {
+        return 0;
     }
 
     public void clearView() {
