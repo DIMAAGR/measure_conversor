@@ -2,6 +2,7 @@ package measureConverter.view;
 
 import java.util.Scanner;
 
+import measureConverter.enums.MeasureType;
 import measureConverter.enums.ViewOption;
 
 public class ConversorView {
@@ -42,6 +43,12 @@ public class ConversorView {
         }
     }
 
+    public void showConvertedValue(MeasureType from, MeasureType to, double result) {
+        System.out.println("========================================================================");
+        System.out.println("O Resultado da conversão de " + from.name() + " para " + to.name() + " é: " + result);
+        System.out.println("========================================================================");
+    }
+
     public void clearView() {
         // Imprimir 50 linhas em branco para simular a limpeza da tela
         for (int i = 0; i < 50; i++) {
@@ -51,19 +58,3 @@ public class ConversorView {
     }
 
 }
-
-/*
- * System.out.println(
- * "========================================================================");
- * System.out.println("Bem vindo ao conversor! selecione uma das áreas abaixo:"
- * );
- * System.out.println("1 - Celcius");
- * System.out.println("2 - Fahrenheit");
- * System.out.println("3 - Kelvin");
- * System.out.println("4 - Metros");
- * System.out.println("5 - Polegadas");
- * System.out.println("6 - Sair");
- * System.out.println(
- * "========================================================================");
- * System.out.print("Digite um número: ");
- */
